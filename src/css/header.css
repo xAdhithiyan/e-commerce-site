@@ -4,6 +4,7 @@
 }
 body{
     height:200vh;
+    overflow: auto;
 }
 
 .header{
