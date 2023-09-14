@@ -8,7 +8,13 @@ function CartPageComponents(props){
                 <div className="item-name" >item-{props.item}</div>
                 <div>${props.price}</div>
             </div>
-            <div>{props.qtn}</div>
+            <div className="quantity">
+                <div>{props.qtn}</div>
+                <div>
+                    <button className={props.item} onClick={props.qtnIncrease}>+</button>
+                    <button className={props.item} onClick={props.qtnDecrease}>-</button>
+                </div>
+            </div>
             <div>${total}</div>
         </div>
     )
