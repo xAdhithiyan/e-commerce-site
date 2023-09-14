@@ -1,6 +1,7 @@
 import MainPage from "./MainPage.jsx"
 import CartPage from "./CartPage.jsx"
 import { BrowserRouter, Routes,Route } from "react-router-dom"
+import ScrollToTop from "./main-page-components/scrollToTop.js"
 
 
 

@@ -1,4 +1,4 @@
-function Header(){
+function Header(props){
     return(
         <>
             <div className="header">
@@ -6,7 +6,7 @@ function Header(){
                     <a href="https://www.dscommunity.in/" target="_blank"><img className="logo" src="/images/logo.png" alt="logo"/></a>
                     <input type="search" />
                     <img className="search-icon" src="/images/search.svg" alt="pfp"/>
-                    <div>Cart</div>
+                    <div onClick={props.nextPage}>Cart</div>
                     <a href="https://github.com/xAdhithiyan" target="_blank"><img className="pfp" src="/images/pfp.jpg" alt="" /></a>
                 </div>
                 <div className="company" >DreamWeave <div className="company-moto" >Embark on a Journey of Fashion, Where Every Outfit Tells Your Story</div></div>

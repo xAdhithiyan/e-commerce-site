@@ -71,10 +71,11 @@ input{
     height: 51px;
 }
 
-/* .sub-header > div{
-    position: sticky;
-    top:0px;
-} */
+body .sub-header > div{
+    position: fixed;
+    right:5%;
+
+} 
 
 /* styling for header */
 .header{
