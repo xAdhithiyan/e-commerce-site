@@ -45,7 +45,7 @@ input{
     border-radius: 50%;
     margin:10px;
 }
-.sub-header > div{
+.sub-header > button{
     background-color: white;
     width: 80px;
     height:40px;
@@ -71,10 +71,9 @@ input{
     height: 51px;
 }
 
-body .sub-header > div{
+body .sub-header > button{
     position: fixed;
     right:5%;
-
 } 
 
 /* styling for header */
@@ -97,4 +96,9 @@ body .sub-header > div{
     font-size: 2rem;
     margin-top:20px;
     opacity:0.5;
+}
+.sub-header > button.valid-color{
+    background-color: var(--valid-color);
+    transition: 0.3s;
+    
 }

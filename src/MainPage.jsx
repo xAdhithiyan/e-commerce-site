@@ -5,63 +5,61 @@
     import Header from "./main-page-components/Header.jsx"
     import Cards from "./main-page-components/Cards.jsx"
     import {useNavigate} from 'react-router-dom' //used for navigating to new page
-    import {useRef} from "react"
+    import {useRef, useState} from "react"
 
     function MainPage() {
+        const [cartItemNumber, setCartItemNumber] = useState("Cart");
+        const [cartColor , setCartColor] = useState("")
         const cartItems = useRef({
-            i1: "3400",
-            i3:"1400",
-            i8:"3200"
-
         }) 
         //details of all the items
         const details = [
             {
                 id:1,
                 name: "item 1",
-                price: "$",
+                price: "$60",
                 img: "/images/item-1.png"
             },
             {
                 id:2,
                 name: "item 2",
-                price: "$",
+                price: "$60",
                 img: "/images/item-2.png"
             },
             {
                 id:3,
                 name: "item 3",
-                price: "$",
+                price: "$70",
                 img: "/images/item-3.png"
             },
             {
                 id:4,
                 name: "item 4",
-                price: "$",
+                price: "$55",
                 img: "/images/item-4.png"
             },
             {
                 id:5,
                 name: "item 5",
-                price: "$",
+                price: "$20",
                 img: "/images/item-5.png"
             },
             {
                 id:6,
                 name: "item 6",
-                price: "$",
+                price: "$15",
                 img: "/images/item-6.png"
             },
             {
                 id:7,
                 name: "item 7",
-                price: "$",
+                price: "$20",
                 img: "/images/item-7.png"
             },
             {
                 id:8,
                 name: "item 8",
-                price: "$",
+                price: "$10",
                 img: "/images/item-8.png"
             },
         ]
@@ -69,14 +67,42 @@
         function nextPage(e){
             navigate("/cart", {state:{...cartItems}})
         }
+
+        function updateCart(e){
+            let arr = e.currentTarget.childNodes
+            let qtn = `i${arr[1].textContent.split(" ")[1]}`
+            let price = `1${arr[2].textContent.slice(1)}`
+            if(e.currentTarget.classList.value.includes("valid")){
+                delete cartItems.current[qtn]
+                e.currentTarget.classList.remove("valid")
+                console.log(cartItems.current)
+            }else{
+                cartItems.current = {
+                    ...cartItems.current , [qtn]: price
+                }
+                e.currentTarget.classList.add("valid")
+                console.log(cartItems.current)
+            }
+
+            /* to update the cart display */
+            let len = Object.keys(cartItems.current).length
+            if(len == 0){
+                setCartItemNumber("Cart")
+                setCartColor("")
+            }else{
+                setCartItemNumber(`Cart(${len})`)
+                setCartColor("valid-color")
+            }
+        }
+        
         return (
             <>
-                <Header nextPage = {nextPage}/>
+                <Header nextPage = {nextPage} cartItemNumber = {cartItemNumber} cartColor = {cartColor}/>
                 <div class="products" >Our Products</div>
                 <hr></hr>
                 <div className="main-card">
                     {details.map(i => (
-                        <Cards key={i.id} {...i} nextPage = {nextPage}/> 
+                        <Cards key={i.id} {...i} updateCart = {updateCart}/> 
                     ))}
                 </div>
                 <hr></hr>
