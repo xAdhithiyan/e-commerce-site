@@ -2,6 +2,8 @@ import { useLocation,useNavigate } from "react-router-dom"
 import { useState } from "react";
 import CartPageComponents from "./main-page-components/CartPageComponets.jsx"
 import "./css/cartPage.css"
+import logo from "/images/logo.png"
+import home from "/images/home.svg"
 
 function CartPage(){
     const carts = useLocation().state;
@@ -57,9 +59,9 @@ function CartPage(){
         <>
             <div className="main-cart">
                 <div className="cartHeader">
-                    <img onClick={e => navigate("/home")} src="/images/home.svg" alt="home" />
+                    <img onClick={e => navigate("/home")} src={home} alt="home" />
                     <div>Checkout</div>
-                    <a href="https://www.dscommunity.in/" target="_blank" ><img src="/images/logo.png" alt="logo"/></a>
+                    <a href="https://www.dscommunity.in/" target="_blank" ><img src={logo} alt="logo"/></a>
                 </div>
                 <div className="cartpage" >
                     <div className="frame">
