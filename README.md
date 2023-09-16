@@ -24,4 +24,4 @@ A shopping site build using react.js and vanilla css.
 ### Home page(full view)
 ![Screenshot 2023-09-14 at 23-34-26 DreamWeave Home](https://github.com/xAdhithiyan/e-commerce-site/assets/113228161/ad078502-f0c2-4858-9156-50243776349a)
 ### Cart section  
-![Screenshot 2023-09-14 at 23-35-55 DreamWeave Home](https://github.com/xAdhithiyan/e-commerce-site/assets/113228161/451864b5-cae0-4eb1-aab3-65ff7bfc6db2)
+![Screenshot from 2023-09-16 06-30-01](https://github.com/xAdhithiyan/e-commerce-site/assets/113228161/aa02b187-4f60-4d19-818f-fa54a4f7ca72)
