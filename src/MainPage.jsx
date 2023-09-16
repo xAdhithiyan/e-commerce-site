@@ -7,6 +7,16 @@
     import {useNavigate} from 'react-router-dom' //used for navigating to new page
     import {useRef, useState} from "react"
 
+    /* images */
+    import img_1 from "/images/item-1.png"
+    import img_2 from "/images/item-2.png"
+    import img_3 from "/images/item-3.png"
+    import img_4 from "/images/item-4.png"
+    import img_5 from "/images/item-5.png"
+    import img_6 from "/images/item-6.png"
+    import img_7 from "/images/item-7.png"
+    import img_8 from "/images/item-8.png"
+    
     function MainPage() {
         const [cartItemNumber, setCartItemNumber] = useState("Cart");
         const [cartColor , setCartColor] = useState("")
@@ -18,49 +28,49 @@
                 id:1,
                 name: "item 1",
                 price: "$60",
-                img: "/images/item-1.png"
+                img: img_1
             },
             {
                 id:2,
                 name: "item 2",
                 price: "$60",
-                img: "/images/item-2.png"
+                img: img_2
             },
             {
                 id:3,
                 name: "item 3",
                 price: "$70",
-                img: "/images/item-3.png"
+                img: img_3
             },
             {
                 id:4,
                 name: "item 4",
                 price: "$55",
-                img: "/images/item-4.png"
+                img: img_4
             },
             {
                 id:5,
                 name: "item 5",
                 price: "$20",
-                img: "/images/item-5.png"
+                img: img_5
             },
             {
                 id:6,
                 name: "item 6",
                 price: "$15",
-                img: "/images/item-6.png"
+                img: img_6
             },
             {
                 id:7,
                 name: "item 7",
                 price: "$20",
-                img: "/images/item-7.png"
+                img: img_7
             },
             {
                 id:8,
                 name: "item 8",
                 price: "$10",
-                img: "/images/item-8.png"
+                img: img_8
             },
         ]
         const navigate = useNavigate()
