@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom"
+import { useLocation,useNavigate } from "react-router-dom"
 import { useState } from "react";
 import CartPageComponents from "./main-page-components/CartPageComponets.jsx"
 import "./css/cartPage.css"
@@ -51,17 +51,26 @@ function CartPage(){
             }
         }
     }
+    let navigate = useNavigate();
 
     return(
-        <div className="cartpage" >
-            <div className="frame">
-                {arr.map(i => (
-                    <CartPageComponents item = {i[0]} qtn = {i[1]} price = {i.slice(2)} totalPrice = {totalPrice} qtnIncrease = {qtnIncrease} qtnDecrease = {qtnDecrease}/>
-    
-                ))}
+        <>
+            <div className="main-cart">
+                <div className="cartHeader">
+                    <img onClick={e => navigate("/home")} src="/images/home.svg" alt="home" />
+                    <div>Checkout</div>
+                    <a href="https://www.dscommunity.in/" target="_blank" ><img src="/images/logo.png" alt="logo"/></a>
+                </div>
+                <div className="cartpage" >
+                    <div className="frame">
+                        {arr.map(i => (
+                            <CartPageComponents item = {i[0]} qtn = {i[1]} price = {i.slice(2)} totalPrice = {totalPrice} qtnIncrease = {qtnIncrease} qtnDecrease = {qtnDecrease}/>
+                        ))}
+                    </div>
+                    <div className="totalprice">Total = ${totalPrice}</div>
+                </div>
             </div>
-            <div className="totalprice">Total = ${totalPrice}</div>
-        </div>
+        </>
     ) 
 }
 
